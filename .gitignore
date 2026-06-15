@@ -28,4 +28,6 @@ test-results/
 # Large demo media (kept out of git; produced by Phase 5)
 demo/*.mp4
 demo/raw/
+demo/audio/
+demo/clips/
 design/*.png
