@@ -1,0 +1,31 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+secrets/
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.hypothesis/
+
+# Build / capture artifacts
+playwright-report/
+test-results/
+.DS_Store
+
+# Large demo media (kept out of git; produced by Phase 5)
+demo/*.mp4
+demo/raw/
+design/*.png
