@@ -1,25 +1,39 @@
-<!-- Throughline demo narration. Each paragraph is one spoken beat (blank-line separated). '#' headings are ignored by tts.py. ~3.5–4 min. -->
+<!-- Throughline demo narration — thorough ~5.5–6 min walkthrough of the LIVE product. Each paragraph is one spoken beat (blank-line separated). '#' headings are ignored by tts.py. -->
 
-# Throughline — narrated walkthrough of the live product
+# Throughline — full narrated walkthrough
 
-Most A-I learning tools are still a chat box with better answers, or a fixed lesson path with a progress bar. Throughline takes a different bet: the interface itself is the tutor.
+Most A-I learning tools are one of two things: a chat box with better answers, or a fixed lesson path with a progress bar. Both miss what learning actually is. Learning is multimodal — a student speaks, points, drags, sketches, hesitates, and changes their mind. And learning needs coherence: a clear path from confusion to demonstrated ability. Throughline is built around both. Its bet is simple but demanding — the interface itself should be part of the tutoring.
 
-We teach one tightly-scoped skill — the angle relationships formed when a line crosses two parallel lines — and we move a learner from confusion to a mastery they can actually transfer.
+We deliberately scoped to one thing, and scoped it tightly: the angle relationships formed when a transversal crosses two parallel lines. We chose geometry for a reason you'll see throughout. Its correctness is provable. Every figure is built from real coordinates, so each angle is exact arithmetic, not an opinion. That lets a deterministic engine — never the language model — be the judge of what is right and what is wrong.
 
-This is the learner's surface. One stable, manipulable diagram. Drag the transversal, and every angle updates with exact, engine-computed values. The figure is the thinking space, not decoration.
+This is the learner's surface, and at its center is one stable, manipulable diagram that stays the hero the whole way through. In Explore mode the learner just plays. Drag the transversal, and all eight angles recompute live, exactly. Geometry is spatial, so we let the learner reason on the figure directly, instead of flattening it into a paragraph of text they have to re-picture every turn.
 
-Answer in degrees, and name the relationship. The engine checks it instantly and stamps it verified. Notice that badge — the answer is proven by deterministic geometry, never by the language model.
+Now a real question. Lines m and n are parallel; given one angle, find another. The learner answers in degrees — and, just as important, names the relationship that connects them. The engine checks both, instantly, and stamps the answer verified. That cyan badge is the entire thesis on screen: the answer is proven by geometry, not asserted by an A-I.
 
-That distinction matters. Here, the number is right, but the relationship is wrong, and Throughline refuses to call it correct. A right answer for the wrong reason is exactly the pattern-matching we guard against.
+Here is where most beautiful interfaces quietly fail. Watch closely. The number is correct — but the relationship the learner picked is wrong. Throughline refuses to call this mastery. A right answer for the wrong reason is exactly the pattern-matching we are built to catch. Guessing the number, or memorizing "just pick the other big angle," does not get you through this door.
 
-When a learner is stuck, they can ask for a hint, and it's spoken aloud. The A-I coaches — but it is handed the engine's ground truth, and is structurally blocked from ever contradicting it.
+When a learner is genuinely stuck, they can ask for a hint, and it is spoken aloud, so help arrives without taking over the workspace. This is the one place the language model coaches. But it is handed the engine's ground truth, and is structurally blocked from ever contradicting it. If it tries to state a number the engine does not endorse, we strip it out. The A-I phrases the teaching. It never owns the truth.
 
-As the learner shows competence, the scaffolds fade. The live readouts switch off, and the surface asks for reasoning. It always says why it changed, and the diagram itself stays put, so you never lose your place.
+Underneath all of this runs a transparent estimator that reads where the learner is — confused, guessing, practicing, pattern-matching, leaning on hints, or ready to move on. It uses honest signals: correctness, response time, how many hints were used, and whether the reasoning was actually named. There is no hidden black box and no affect-detection guesswork — just observable evidence the learner could see for themselves.
 
-The real test is transfer: a brand-new kind of figure, and a trap where the lines are not parallel and the rule simply does not apply. Mastery is only granted here, with low hint-dependence and the correct rule named.
+As competence shows, the scaffolds fade. The live readouts switch off, and the surface asks the learner to carry the reasoning on their own. Notice the figure itself did not move — only the support around it changed. That is deliberate. The diagram is an anchor, and we never yank it out from under the learner mid-thought.
 
-The Evidence tab tracks the metrics that protect against shallow learning — how often the interface changed, how dependent the learner is on hints — and compares the whole experience against a chat-only baseline.
+A surface that constantly rearranges itself is not responsive, it is chaotic. So Throughline follows an explicit policy: guidance updates instantly, but structural changes are debounced, announced with a plain reason, and never happen in the middle of a thought. It refuses to auto-change the things that matter — it never rearranges the diagram, never deletes the learner's work, and never jumps ahead to assessment without asking. And when a learner starts to struggle, it adapts downward too: it simplifies, offers a smaller hint, and preserves the work already done instead of wiping the slate.
 
-And correctness isn't just claimed. The same geometry is implemented twice, in two languages, and property-tested to agree across a hundred and ninety-two cases. Provable, not asserted.
+Mastery is not just a number, so we ask learners to justify their reasoning — by voice, or by text. Speaking an explanation reveals understanding that a click never could. And this judgment is bounded in exactly one direction: it can withhold a mastery signal when the reasoning is missing, but it can never grant one. A confident-sounding wrong explanation cannot manufacture mastery here.
 
-It's live, it's tested end to end, and the idea is simple. When the interface is the tutor, learning stops being a conversation about the work — and becomes the work itself.
+The camera earns its place the same way. A learner can photograph their handwritten work, and it is preserved right there in the workspace — but the transcription is then re-checked by the engine, independently. So even if the vision model misreads a digit, it physically cannot produce a false "correct." Every modality is verified, and never simply trusted.
+
+Now the real test. Up to this point the learner has practiced on parallel lines. Transfer asks a harder question: does the skill survive in a new form? Here is a triangle, with a line drawn through its apex parallel to the base. To find the missing angle, the learner has to chain an alternate-interior relationship together with the fact that a triangle's angles always sum to one hundred and eighty degrees. The same idea, an unfamiliar shape, and no scaffolds to lean on.
+
+And the sharpest test of all is a trap. These two lines look just like the others — but they are not parallel. A learner who only memorized the rule will apply it and be wrong. A learner who genuinely understands recognizes that the rule does not apply at all. Knowing the boundary of a rule, where it stops working, is one of the truest signs of real understanding.
+
+So mastery here is never "scored eighty percent," and never "completed the flow." It is granted only on a transfer item, with the correct relationship named, with low dependence on hints, and with that non-parallel trap handled correctly. It answers a sharper question than a score ever could: what can this learner now do, that they could not do before?
+
+All of this is measured. The Evidence tab tracks the obvious things — time to first correct answer, and transfer success. But more importantly, it tracks the counter-metrics that protect against bad responsiveness and shallow learning: how often the interface changed, whether it stayed inside a calm band, and how the learner's dependence on hints trends over time. We instrument the failure modes, not just the wins.
+
+And we hold ourselves to a direct comparison. Side by side with a chat-only tutor, the difference is concrete. The chat learner re-reads a paragraph to picture the figure, and is told "correct" by a model that is sometimes simply wrong. Throughline's learner reasons on the figure itself, with a correctness the model cannot fake, and a transfer check the chat path does not even have.
+
+Let me close on the claim that everything rests on. Correctness here is not just asserted — it is proven. The same geometry is implemented twice, in two different languages: TypeScript inside the app, and an independent engine in Python. The two are property-tested to agree across a hundred and ninety-two generated cases, including every single case where the rule is supposed to fail. Two engines, two languages, one answer.
+
+Finally, part of taste is what you refuse to build. We rejected facial-affect and attention detection, because it is a gimmick that breeds false confidence. We rejected multi-device sensor fusion, because it could not beat a single device for this goal. And we keep the A-I on a short leash, because in learning, a confident wrong answer is worse than no answer at all. It is live, it is tested end to end, and the idea holding it together is simple: when the interface is the tutor, learning stops being a conversation about the work — and becomes the work itself. This is Throughline.
