@@ -6,7 +6,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Diagram from '../components/Diagram';
 import type { SessionApi } from '../state/useSession';
-import { humanRelationship, type Item, type Relationship } from '../engine/geometry';
+import { angleLabel, humanRelationship, type Item, type Relationship } from '../engine/geometry';
 import { speak, readHandwriting } from '../lib/api';
 
 export default function Studio({ session }: { session: SessionApi }) {
@@ -137,7 +137,7 @@ export default function Studio({ session }: { session: SessionApi }) {
                 <div className="q">{questionText(item, isTrap)}</div>
                 {showRel && (
                   <p className="muted" style={{ fontSize: 13.5 }}>
-                    ∠{item.given.angle} and ∠{item.ask} are <span style={{ color: 'var(--cyan)' }}>{humanRelationship(item.relationship)}</span> angles.
+                    ∠{angleLabel(item.given.angle)} and ∠{angleLabel(item.ask)} are <span style={{ color: 'var(--cyan)' }}>{humanRelationship(item.relationship)}</span> angles.
                   </p>
                 )}
                 {!isTrap && (
@@ -233,7 +233,8 @@ export default function Studio({ session }: { session: SessionApi }) {
 }
 
 function questionText(item: Item, isTrap: boolean): string {
+  const g = angleLabel(item.given.angle), a = angleLabel(item.ask), val = Math.round(item.given.value);
   if (item.requiresChaining) return 'Find the missing apex angle (?). One base angle comes from an alternate-interior relationship with the parallel line; a triangle\'s angles sum to 180°.';
-  if (isTrap) return `These lines are NOT parallel. If ∠${item.given.angle} = ${Math.round(item.given.value)}°, what is ∠${item.ask}?`;
-  return `Lines m ∥ n. If ∠${item.given.angle} = ${Math.round(item.given.value)}°, what is ∠${item.ask}?`;
+  if (isTrap) return `These lines are NOT parallel. If ∠${g} = ${val}°, what is ∠${a}?`;
+  return `Lines m ∥ n. If ∠${g} = ${val}°, what is ∠${a}?`;
 }

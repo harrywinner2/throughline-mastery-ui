@@ -30,6 +30,18 @@
 
 export type AngleId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
+/**
+ * Human-facing names for the eight angles. We label them with LETTERS (a–h),
+ * never numbers, so an angle's name (∠c) never gets confused with its measure
+ * (58°). Top intersection = a,b,c,d; bottom intersection = e,f,g,h.
+ */
+export const ANGLE_LABELS: Record<AngleId, string> = {
+  1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h',
+};
+export function angleLabel(id: AngleId): string {
+  return ANGLE_LABELS[id];
+}
+
 export type Relationship =
   | 'corresponding'
   | 'alternate-interior'
@@ -218,9 +230,10 @@ function explain(item: Item, truth: number | null): string {
   if (item.requiresChaining) {
     return `Use the ${rel} relationship to find one interior angle, then the triangle's angles sum to 180°.`;
   }
+  const g = ANGLE_LABELS[item.given.angle], a = ANGLE_LABELS[item.ask];
   return kind === EQUAL
-    ? `∠${item.given.angle} and ∠${item.ask} are ${rel}, so they are equal: ${truth}°.`
-    : `∠${item.given.angle} and ∠${item.ask} are ${rel}, so they are supplementary: ${truth}°.`;
+    ? `∠${g} and ∠${a} are ${rel}, so they are equal: ${truth}°.`
+    : `∠${g} and ∠${a} are ${rel}, so they are supplementary: ${truth}°.`;
 }
 
 export function humanRelationship(rel: Relationship): string {

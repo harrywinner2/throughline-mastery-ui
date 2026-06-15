@@ -259,8 +259,8 @@ svg text{font-family:var(--body);font-weight:700}
     <div class="rail">
       <div class="card task">
         <span class="eyebrow" id="taskKind">Guided practice · item 4 / —</span>
-        <div class="q">Lines <b>m</b> ∥ <b>n</b>. If ∠3 = <span id="givenVal">58°</span>, what is <span id="askName">∠6</span>?</div>
-        <p class="muted" style="font-size:13.5px">∠3 and ∠6 are <span id="relName">alternate interior angles</span>.</p>
+        <div class="q">Lines <b>m</b> ∥ <b>n</b>. If ∠c = <span id="givenVal">58°</span>, what is <span id="askName">∠f</span>?</div>
+        <p class="muted" style="font-size:13.5px">∠c and ∠f are <span id="relName">alternate interior angles</span>.</p>
         <div class="answer-row">
           <input id="ansInput" inputmode="numeric" placeholder="degrees…" />
           <button class="btn sm" onclick="checkAnswer()">Check</button>
@@ -278,7 +278,7 @@ svg text{font-family:var(--body);font-weight:700}
         <div class="feedback" id="fb"></div>
         <div class="camera-prev" id="camPrev">
           <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px">📷 Captured work · transcribed by vision, <b style="color:var(--cyan)">re-verified by the engine</b></div>
-          <div class="mono" style="font-size:15px">“∠6 = 122°” &nbsp;→&nbsp; <span style="color:var(--ok)">engine: 122° ✓ preserved in workspace</span></div>
+          <div class="mono" style="font-size:15px">“∠f = 122°” &nbsp;→&nbsp; <span style="color:var(--ok)">engine: 122° ✓ preserved in workspace</span></div>
         </div>
         <div style="display:flex;gap:10px;margin-top:16px">
           <button class="btn ghost sm" onclick="askHint()">Ask for a hint</button>
@@ -502,8 +502,8 @@ function buildDiagram(svg, opts){
     // labels
     const gv=opts.given!=null?opts.given:acute;
     function lab(x,y,txt,color){const t=el('text',{x,y,fill:color,'font-size':15,'text-anchor':'middle'});t.textContent=txt;svg.appendChild(t);}
-    lab(ix1-40,y1-10, (opts.given!=null?opts.given:acute)+'°', '#bff6df');
-    lab(ix2+40,y2+22, opts.showAsk===false?'?':(acute+'°'), '#ffd2da');
+    lab(ix1-40,y1-10, 'c = '+(opts.given!=null?opts.given:acute)+'°', '#bff6df');
+    lab(ix2+40,y2+22, 'f = '+(opts.showAsk===false?'?':(acute+'°')), '#ffd2da');
     // draggable handle at top
     const h=el('circle',{cx:topX,cy:H*0.10,r:9,class:'handle'});
     svg.appendChild(h);
@@ -515,7 +515,7 @@ function buildDiagram(svg, opts){
   function pointerToIncl(evt){
     const pt=svg.createSVGPoint();pt.x=evt.clientX;pt.y=evt.clientY;
     const loc=pt.matrixTransform(svg.getScreenCTM().inverse());
-    const ang=Math.atan2((H/2)-loc.y, loc.x-cx)*180/Math.PI; // from center
+    const ang=Math.atan2(loc.y-(H/2), loc.x-cx)*180/Math.PI; // from center (handle tracks pointer)
     let v=ang; if(v<0)v+=180; v=Math.max(28,Math.min(152,v)); incl=180-v<28?180-28:v;
     incl=Math.max(28,Math.min(152,v));
     render();
@@ -547,8 +547,8 @@ function askHint(){
   document.getElementById('hintLvl').textContent=hintLevel;
   const hints=[
     'Alternate interior angles sit on opposite sides of the transversal, between the parallel lines. What does that tell you about their measures?',
-    'When lines are parallel, alternate interior angles are equal. So ∠6 has the same measure as ∠3.',
-    'Set ∠6 = ∠3. Read the given value and enter it directly.'
+    'When lines are parallel, alternate interior angles are equal. So ∠f has the same measure as ∠c.',
+    'Set ∠f = ∠c. Read the given value and enter it directly.'
   ];
   document.getElementById('hintText').textContent=hints[hintLevel-1];
   document.getElementById('hintBox').classList.add('show');
@@ -567,10 +567,10 @@ function checkAnswer(){
     bump(0.12,'practicing');
   }else if(numOk&&!ruleOk){
     fb.className='feedback show bad';
-    fb.innerHTML='The number is right, but the <i>relationship</i> isn\'t. A right answer with the wrong reason isn\'t mastery — which rule makes ∠3 and ∠6 equal?';
+    fb.innerHTML='The number is right, but the <i>relationship</i> isn\'t. A right answer with the wrong reason isn\'t mastery — which rule makes ∠c and ∠f equal?';
   }else{
     fb.className='feedback show bad';
-    fb.innerHTML='Not yet. Drag the transversal and watch how ∠3 and ∠6 move together — they\'re alternate interior angles.';
+    fb.innerHTML='Not yet. Drag the transversal and watch how ∠c and ∠f move together — they\'re alternate interior angles.';
   }
 }
 function nextItem(){

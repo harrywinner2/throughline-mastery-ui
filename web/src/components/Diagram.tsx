@@ -7,7 +7,7 @@
  * inclination live; graded items are drawn at a fixed inclination.
  */
 import { useRef, useState, useEffect } from 'react';
-import { angleMeasures, type AngleId, type Figure } from '../engine/geometry';
+import { angleMeasures, ANGLE_LABELS, type AngleId, type Figure } from '../engine/geometry';
 
 interface Props {
   figure: Figure;
@@ -77,7 +77,10 @@ export default function Diagram({ figure, scaffold, givenAngle, askAngle, intera
       const svg = svgRef.current!; const pt = svg.createSVGPoint();
       pt.x = ev.clientX; pt.y = ev.clientY;
       const loc = pt.matrixTransform(svg.getScreenCTM()!.inverse());
-      let v = (Math.atan2(cy - loc.y, loc.x - cx) * 180) / Math.PI;
+      // The transversal pivots through the centre, so the inclination is simply
+      // the angle of (pointer − centre). Using loc.y - cy (NOT cy - loc.y) makes
+      // the handle track the pointer instead of mirroring it.
+      let v = (Math.atan2(loc.y - cy, loc.x - cx) * 180) / Math.PI;
       if (v < 0) v += 180;
       v = Math.max(28, Math.min(152, v));
       setIncl(v); onInclinationChange?.(v);
@@ -102,17 +105,20 @@ export default function Diagram({ figure, scaffold, givenAngle, askAngle, intera
       {givenAngle && <path className="arc-given" d={wedge(rays[givenAngle][0], 30, rays[givenAngle][1], rays[givenAngle][2])} />}
       {askAngle && <path className="arc-ask" d={wedge(rays[askAngle][0], 30, rays[askAngle][1], rays[askAngle][2])} />}
 
-      {/* numeric readouts: all when scaffolded, else only given (+ ask shown as ?) */}
+      {/* Every angle is named with a LETTER (a–h); the measure is appended when
+          it's known (scaffold on, or it's the given angle). The asked angle reads
+          "f = ?" until the scaffold reveals it. */}
       {ids.map((id) => {
-        const show = scaffold || id === givenAngle;
         const isGiven = id === givenAngle, isAsk = id === askAngle;
+        const showDeg = scaffold || isGiven;
         const p = labelPos(id);
-        let label = `${Math.round(m[id])}°`;
-        if (isAsk && !scaffold) label = '?';
-        if (!show && !isAsk) return null;
+        const letter = ANGLE_LABELS[id];
+        let label = letter;
+        if (isAsk && !scaffold) label = `${letter} = ?`;
+        else if (showDeg) label = `${letter} = ${Math.round(m[id])}°`;
         const color = isGiven ? '#bff6df' : isAsk ? '#ffd2da' : 'rgba(255,255,255,.55)';
         return (
-          <text key={id} x={p.x} y={p.y} fill={color} fontSize={isGiven || isAsk ? 16 : 12.5} textAnchor="middle" fontWeight={700}>
+          <text key={id} x={p.x} y={p.y} fill={color} fontSize={isGiven || isAsk ? 15 : 12} textAnchor="middle" fontWeight={700}>
             {label}
           </text>
         );
