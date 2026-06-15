@@ -25,9 +25,6 @@ playwright-report/
 test-results/
 .DS_Store
 
-# Large demo media (kept out of git; produced by Phase 5)
-demo/*.mp4
-demo/raw/
-demo/audio/
-demo/clips/
+# Demo — script, narration, clips, and rendered video all stay local
+demo/
 design/*.png
