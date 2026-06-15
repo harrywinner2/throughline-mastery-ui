@@ -1,0 +1,1926 @@
+{
+  "generatedBy": "typescript-engine",
+  "count": 192,
+  "cases": [
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 5,
+      "groundTruth": 155
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 25,
+      "askAngle": 6,
+      "groundTruth": 25
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 8,
+      "groundTruth": 155
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 25,
+      "askAngle": 5,
+      "groundTruth": 155
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 4,
+      "groundTruth": 155
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 25,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 2,
+      "groundTruth": 25
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 5,
+      "groundTruth": 147
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 33,
+      "askAngle": 6,
+      "groundTruth": 33
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 8,
+      "groundTruth": 147
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 33,
+      "askAngle": 5,
+      "groundTruth": 147
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 4,
+      "groundTruth": 147
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 33,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 2,
+      "groundTruth": 33
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 5,
+      "groundTruth": 141
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 39,
+      "askAngle": 6,
+      "groundTruth": 39
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 8,
+      "groundTruth": 141
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 39,
+      "askAngle": 5,
+      "groundTruth": 141
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 4,
+      "groundTruth": 141
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 39,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 2,
+      "groundTruth": 39
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 5,
+      "groundTruth": 133
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 47,
+      "askAngle": 6,
+      "groundTruth": 47
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 8,
+      "groundTruth": 133
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 47,
+      "askAngle": 5,
+      "groundTruth": 133
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 4,
+      "groundTruth": 133
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 47,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 2,
+      "groundTruth": 47
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 5,
+      "groundTruth": 128
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 52,
+      "askAngle": 6,
+      "groundTruth": 52
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 8,
+      "groundTruth": 128
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 52,
+      "askAngle": 5,
+      "groundTruth": 128
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 4,
+      "groundTruth": 128
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 52,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 2,
+      "groundTruth": 52
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 5,
+      "groundTruth": 122
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 58,
+      "askAngle": 6,
+      "groundTruth": 58
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 8,
+      "groundTruth": 122
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 58,
+      "askAngle": 5,
+      "groundTruth": 122
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 4,
+      "groundTruth": 122
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 58,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 2,
+      "groundTruth": 58
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 5,
+      "groundTruth": 117
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 63,
+      "askAngle": 6,
+      "groundTruth": 63
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 8,
+      "groundTruth": 117
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 63,
+      "askAngle": 5,
+      "groundTruth": 117
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 4,
+      "groundTruth": 117
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 63,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 2,
+      "groundTruth": 63
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 5,
+      "groundTruth": 109
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 71,
+      "askAngle": 6,
+      "groundTruth": 71
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 8,
+      "groundTruth": 109
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 71,
+      "askAngle": 5,
+      "groundTruth": 109
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 4,
+      "groundTruth": 109
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 71,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 2,
+      "groundTruth": 71
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 5,
+      "groundTruth": 102
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 78,
+      "askAngle": 6,
+      "groundTruth": 78
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 8,
+      "groundTruth": 102
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 78,
+      "askAngle": 5,
+      "groundTruth": 102
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 4,
+      "groundTruth": 102
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 78,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 2,
+      "groundTruth": 78
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 5,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 84,
+      "askAngle": 6,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 8,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 84,
+      "askAngle": 5,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 4,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 84,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 2,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 5,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 96,
+      "askAngle": 6,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 8,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 96,
+      "askAngle": 5,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 4,
+      "groundTruth": 84
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 96,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 2,
+      "groundTruth": 96
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 5,
+      "groundTruth": 75
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 105,
+      "askAngle": 6,
+      "groundTruth": 105
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 8,
+      "groundTruth": 75
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 105,
+      "askAngle": 5,
+      "groundTruth": 75
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 4,
+      "groundTruth": 75
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 105,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 2,
+      "groundTruth": 105
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 5,
+      "groundTruth": 62
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 118,
+      "askAngle": 6,
+      "groundTruth": 118
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 8,
+      "groundTruth": 62
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 118,
+      "askAngle": 5,
+      "groundTruth": 62
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 4,
+      "groundTruth": 62
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 118,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 2,
+      "groundTruth": 118
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 5,
+      "groundTruth": 49
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 131,
+      "askAngle": 6,
+      "groundTruth": 131
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 8,
+      "groundTruth": 49
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 131,
+      "askAngle": 5,
+      "groundTruth": 49
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 4,
+      "groundTruth": 49
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 131,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 2,
+      "groundTruth": 131
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 5,
+      "groundTruth": 38
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 142,
+      "askAngle": 6,
+      "groundTruth": 142
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 8,
+      "groundTruth": 38
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 142,
+      "askAngle": 5,
+      "groundTruth": 38
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 4,
+      "groundTruth": 38
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 142,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 2,
+      "groundTruth": 142
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 5,
+      "groundTruth": 30
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 150,
+      "askAngle": 6,
+      "groundTruth": 150
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 8,
+      "groundTruth": 30
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 150,
+      "askAngle": 5,
+      "groundTruth": 30
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 4,
+      "groundTruth": 30
+    },
+    {
+      "type": "parallel-transversal",
+      "inclination": 150,
+      "parallel": true,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 2,
+      "groundTruth": 150
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 25,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 25,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 4,
+      "groundTruth": 155
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 25,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 155,
+      "askAngle": 2,
+      "groundTruth": 25
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 33,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 33,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 4,
+      "groundTruth": 147
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 33,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 147,
+      "askAngle": 2,
+      "groundTruth": 33
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 39,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 39,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 4,
+      "groundTruth": 141
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 39,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 141,
+      "askAngle": 2,
+      "groundTruth": 39
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 47,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 47,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 4,
+      "groundTruth": 133
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 47,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 133,
+      "askAngle": 2,
+      "groundTruth": 47
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 52,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 52,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 4,
+      "groundTruth": 128
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 52,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 128,
+      "askAngle": 2,
+      "groundTruth": 52
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 58,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 58,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 4,
+      "groundTruth": 122
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 58,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 122,
+      "askAngle": 2,
+      "groundTruth": 58
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 63,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 63,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 4,
+      "groundTruth": 117
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 63,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 117,
+      "askAngle": 2,
+      "groundTruth": 63
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 71,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 71,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 4,
+      "groundTruth": 109
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 71,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 109,
+      "askAngle": 2,
+      "groundTruth": 71
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 78,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 78,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 4,
+      "groundTruth": 102
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 78,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 102,
+      "askAngle": 2,
+      "groundTruth": 78
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 84,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 84,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 4,
+      "groundTruth": 96
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 84,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 96,
+      "askAngle": 2,
+      "groundTruth": 84
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 96,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 96,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 4,
+      "groundTruth": 84
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 96,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 84,
+      "askAngle": 2,
+      "groundTruth": 96
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 105,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 105,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 4,
+      "groundTruth": 75
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 105,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 75,
+      "askAngle": 2,
+      "groundTruth": 105
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 118,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 118,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 4,
+      "groundTruth": 62
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 118,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 62,
+      "askAngle": 2,
+      "groundTruth": 118
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 131,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 131,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 4,
+      "groundTruth": 49
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 131,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 49,
+      "askAngle": 2,
+      "groundTruth": 131
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 142,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 142,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 4,
+      "groundTruth": 38
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 142,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 38,
+      "askAngle": 2,
+      "groundTruth": 142
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "corresponding",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "alternate-interior",
+      "givenAngle": 3,
+      "givenValue": 150,
+      "askAngle": 6,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "alternate-exterior",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 8,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "co-interior",
+      "givenAngle": 3,
+      "givenValue": 150,
+      "askAngle": 5,
+      "groundTruth": null
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "vertical",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 4,
+      "groundTruth": 30
+    },
+    {
+      "type": "non-parallel-trap",
+      "inclination": 150,
+      "parallel": false,
+      "relationship": "linear-pair",
+      "givenAngle": 1,
+      "givenValue": 30,
+      "askAngle": 2,
+      "groundTruth": 150
+    }
+  ]
+}
