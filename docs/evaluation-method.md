@@ -1,0 +1,25 @@
+# Evaluation Method
+
+Adaptivity is easy to fake and easy to oversell. A system can look responsive while doing nothing useful — re-arranging the screen on noise, granting mastery to anyone who clicks forward, or narrating its own confidence. So Throughline is evaluated against two ledgers at once: **success metrics** that say it worked, and **counter-metrics** that catch it cheating. Every number below is computed from the session data model (`Attempt`, `LearnerState`, `Session`) so the `/evidence` view can show them live rather than asserting them.
+
+## Success metrics
+
+- **Time-to-first-correct.** Wall-clock from session start (or from an item's first presentation) to the first `Attempt` with `correctNumber: true`. Computed by summing `latencyMs` / timestamps across attempts up to that point. Lower is better, but only read *alongside* hint-dependence — fast-and-hinted is not a win.
+- **Intent-to-UI routing accuracy.** When a learner acts (drags, asks by voice, snaps a photo, answers), did the surface move to the *right* mode? Computed by comparing the policy's mode selection against the `LearnerState.estimate` it was responding to, audited against a hand-labelled set of session traces. Measures whether the "hyperresponsive" surface is responding to the right thing.
+- **Transfer pass rate.** Fraction of sessions reaching the transfer item that produce a passing transfer `Attempt` (correct number **and** correct rule on a triangle-chaining or trap figure). This is the metric that actually tracks learning, not fluency.
+- **Mastery-signal validity.** Of sessions where `Session.masteryDecision.granted` is true, the fraction that *also* satisfy every gate in the evidence trail (`transferPassed`, low hint-dependence, `correctRule`, trap handled). A valid signal is one that survives re-checking against the engine's recorded facts. Target: 100% — a granted signal that fails re-check is a defect, not a near-miss.
+
+## Counter-metrics
+
+- **UI-change rate / "calm band."** Count of `Session.uiChangeCount` per minute of interaction. We want this *inside a band*, not minimized and not maximized: too low means the surface isn't adapting; too high means it's churning and imposing its own extraneous load. The diagram itself is excluded — it must never auto-rearrange mid-interaction — so this measures guidance/mode changes only.
+- **Hint-dependence index.** Per learner, the rolling ratio of `Attempt.hintsUsed` to attempts, weighted toward recent items and toward the transfer item. A correct answer reached at the top of the hint ladder counts against the learner, not for them. This index both feeds the mastery gate and is reported as a counter-metric, because a system that hands out hints to inflate its success metrics is caught here.
+- **False-positive mastery rate.** The fraction of granted mastery decisions that *should not* have been granted — estimated in the prototype by replaying sessions against deliberately adversarial behaviours (click-through, fast guessing, full-ladder hinting) and confirming zero of them earn the signal. Any non-zero rate is a hard failure.
+- **Sensor-usefulness-vs-noise.** For each input mode (voice, camera), the share of captures that changed the learner-state estimate or produced an engine-verified fact versus those that were discarded as noise (vision misreads caught by re-verification, failed transcriptions). A mode that mostly produces noise is a mode we should drop — this is the metric that would have killed affect-detection had we shipped it.
+
+## Baseline: chat-only A/B
+
+The brief demands evidence against a chat/static baseline, so `/evidence` ships a **real, toggleable chat-only baseline** — the same goal pursued through a plain conversational interface with no manipulable diagram, no engine-verified gating, no faded scaffolds. Side by side, the comparison makes the argument concretely: the chat baseline can produce correct *numbers* and confident explanations, but it has no independent authority on correctness and no defended transfer gate, so its "mastery" is whatever the model says it is. The contrast we expect to show: comparable or better time-to-first-correct on Throughline, materially higher transfer pass rate, and — the point — a mastery signal that survives re-checking, which the baseline structurally cannot offer.
+
+## What a real pilot would measure
+
+The prototype evaluates on replayed and authored sessions; a real pilot would add what we cannot fabricate. A between-subjects A/B (Throughline vs. chat baseline) with **delayed post-tests** — days later, on fresh figures — to measure *retention* and *far transfer*, the things desirable-difficulty research says matter and that single-session metrics miss. We would track the false-positive mastery rate against those delayed outcomes (did "mastered" learners actually retain and transfer?), the calm-band against learner-reported and behavioural confusion, and the sensor-usefulness ratios at field scale to decide which modalities earn their keep. The standing rule throughout: a metric that goes up is only good if its paired counter-metric didn't go up to buy it.

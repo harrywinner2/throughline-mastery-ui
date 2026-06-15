@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Throughline — Hyperresponsive Mastery UI · Nerdy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#0F0928; --bg-base:#202344; --bg-panel:#161C2C; --bg-elevated:#22263C;
+  --line:rgba(255,255,255,0.12); --line-soft:rgba(255,255,255,0.07);
+  --text:#FFFFFF; --text-muted:rgba(255,255,255,0.64); --text-dim:#7C7E97;
+  --cyan:#17E2EA; --grad-1:#FF8A3D; --grad-2:#FF4D9D; --grad-3:#A24BFF; --grad-4:#4D9DFF;
+  --grad-ai:linear-gradient(100deg,var(--grad-1),var(--grad-2),var(--grad-3),var(--grad-4));
+  --ok:#3DDC97; --warn:#FFC24B; --info:var(--cyan); --danger:#FF5C7A;
+  --r-pill:100px; --r-card:18px; --r-chip:10px;
+  --shadow:0 18px 50px rgba(0,0,0,0.45);
+  --display:'Poppins','Poppins Fallback',sans-serif;
+  --body:'Karla','Poppins',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--body); color:var(--text); line-height:1.55;
+  background:
+    radial-gradient(1100px 700px at 80% -10%, rgba(162,75,255,0.18), transparent 60%),
+    radial-gradient(900px 600px at 5% 10%, rgba(23,226,234,0.10), transparent 55%),
+    linear-gradient(160deg,var(--bg-base),var(--bg-deep));
+  background-attachment:fixed; min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:var(--display);font-weight:600;letter-spacing:-0.02em;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.grad-text{background:var(--grad-ai);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.muted{color:var(--text-muted)} .dim{color:var(--text-dim)} .mono{font-variant-numeric:tabular-nums}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:16px}
+.nav-inner{display:flex;align-items:center;gap:8px;width:min(1180px,96vw);
+  background:rgba(15,9,40,0.55);backdrop-filter:blur(14px);border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:8px 8px 8px 20px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;font-size:19px;margin-right:6px}
+.brand .dot{width:13px;height:13px;border-radius:50%;background:var(--grad-ai);box-shadow:0 0 16px rgba(255,77,157,.6)}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-link{padding:9px 16px;border-radius:var(--r-pill);color:var(--text-muted);font-weight:500;font-size:14px;cursor:pointer;transition:.18s;border:1px solid transparent}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.05)}
+.nav-link.active{color:#fff;background:rgba(255,255,255,.08);border-color:var(--line)}
+.verified-chip{display:inline-flex;align-items:center;gap:7px;margin-left:8px;padding:8px 14px;border-radius:var(--r-pill);
+  background:rgba(23,226,234,.10);border:1px solid rgba(23,226,234,.35);color:var(--cyan);font-size:12.5px;font-weight:600;white-space:nowrap}
+.verified-chip .tick{width:15px;height:15px;border-radius:50%;background:var(--cyan);color:#06222a;display:grid;place-items:center;font-size:10px;font-weight:800}
+
+/* ---------- layout ---------- */
+.wrap{width:min(1180px,94vw);margin:0 auto;padding:26px 0 90px}
+.view{display:none;animation:fade .35s ease} .view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.btn{font-family:var(--body);font-weight:700;font-size:15px;border:none;cursor:pointer;border-radius:var(--r-pill);
+  padding:13px 26px;color:#fff;background:var(--grad-ai);background-size:160% 160%;transition:.2s;box-shadow:0 8px 26px rgba(162,75,255,.35)}
+.btn:hover{transform:translateY(-2px);background-position:100% 0}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text)}
+.btn.ghost:hover{background:rgba(255,255,255,.06);transform:translateY(-2px)}
+.btn.sm{padding:9px 16px;font-size:13.5px}
+.card{background:linear-gradient(180deg,var(--bg-elevated),var(--bg-panel));border:1px solid var(--line);
+  border-radius:var(--r-card);box-shadow:var(--shadow)}
+.pad{padding:22px} .pad-lg{padding:30px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:var(--r-pill);border:1px solid var(--line)}
+
+/* ---------- landing ---------- */
+.hero{text-align:center;padding:38px 0 18px}
+.hero h1{font-size:clamp(40px,6vw,72px)}
+.hero .sub{font-size:clamp(16px,2vw,20px);color:var(--text-muted);max-width:680px;margin:18px auto 26px}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.why-grid .card{padding:24px} .why-grid h3{font-size:19px;margin-bottom:8px}
+.why-grid .icn{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px;border:1px solid var(--line)}
+.x{color:var(--danger)} .ok{color:var(--ok)}
+.teaser{margin-top:46px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+@media(max-width:880px){.why-grid{grid-template-columns:1fr}.teaser{grid-template-columns:1fr}}
+
+/* ---------- studio ---------- */
+.studio{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
+@media(max-width:980px){.studio{grid-template-columns:1fr}}
+.stage{position:relative;overflow:hidden}
+.stage-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line-soft)}
+.mode-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:var(--r-pill);font-weight:700;font-size:13.5px;
+  background:rgba(23,226,234,.12);border:1px solid rgba(23,226,234,.4);color:var(--cyan)}
+.mode-badge .pulse{width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 0 rgba(23,226,234,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(23,226,234,0)}100%{box-shadow:0 0 0 0 rgba(23,226,234,0)}}
+.why-line{padding:11px 20px;font-size:13.5px;color:var(--text-muted);background:rgba(255,255,255,.025);border-bottom:1px solid var(--line-soft)}
+.why-line b{color:#fff;font-weight:600}
+.diagram-wrap{padding:14px;background:radial-gradient(600px 300px at 50% 0%,rgba(77,157,255,.08),transparent)}
+svg .par-line{stroke:#8b8fb5;stroke-width:3;stroke-linecap:round}
+svg .transversal{stroke:#fff;stroke-width:3.5;stroke-linecap:round}
+svg .handle{fill:var(--grad-2);cursor:grab;filter:drop-shadow(0 0 8px rgba(255,77,157,.7))}
+svg .handle:active{cursor:grabbing}
+svg .arc-given{fill:rgba(61,220,151,.18);stroke:var(--ok);stroke-width:2}
+svg .arc-ask{fill:rgba(255,77,157,.16);stroke:var(--grad-2);stroke-width:2}
+svg .arc-dim{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.22);stroke-width:1.5}
+svg text{font-family:var(--body);font-weight:700}
+.readout-tag{font-size:12px}
+.stage-controls{display:flex;gap:10px;padding:14px 20px;border-top:1px solid var(--line-soft);flex-wrap:wrap;align-items:center}
+.dock{display:flex;gap:8px}
+.dock button{display:flex;align-items:center;gap:8px;padding:10px 15px;border-radius:var(--r-pill);background:rgba(255,255,255,.05);
+  border:1px solid var(--line);color:var(--text);font-family:var(--body);font-weight:600;font-size:13.5px;cursor:pointer;transition:.18s}
+.dock button:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.dock button.live{background:rgba(255,77,157,.18);border-color:var(--grad-2);color:#fff}
+
+/* right rail */
+.rail{display:flex;flex-direction:column;gap:16px}
+.task{padding:20px}
+.task .q{font-family:var(--display);font-size:20px;font-weight:600;margin:10px 0 4px}
+.answer-row{display:flex;gap:10px;margin-top:14px}
+.answer-row input{flex:1;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;color:#fff;
+  font-family:var(--body);font-size:16px;padding:12px 14px;outline:none}
+.answer-row input:focus{border-color:var(--cyan)}
+.rule-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.rule-chip{padding:8px 13px;border-radius:var(--r-pill);border:1px solid var(--line);background:rgba(255,255,255,.03);
+  font-size:13px;font-weight:600;cursor:pointer;transition:.16s}
+.rule-chip:hover{background:rgba(255,255,255,.08)}
+.rule-chip.sel{border-color:var(--cyan);background:rgba(23,226,234,.14);color:var(--cyan)}
+.hint{background:rgba(162,75,255,.10);border:1px solid rgba(162,75,255,.34);border-radius:14px;padding:14px 16px;font-size:14px;display:none}
+.hint.show{display:block;animation:fade .3s}
+.hint .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grad-3);font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.feedback{border-radius:14px;padding:13px 16px;font-size:14.5px;font-weight:600;display:none;margin-top:14px}
+.feedback.show{display:block;animation:fade .3s}
+.feedback.good{background:rgba(61,220,151,.13);border:1px solid var(--ok);color:#bff6df}
+.feedback.bad{background:rgba(255,92,122,.12);border:1px solid var(--danger);color:#ffd2da}
+.mastery{padding:18px 20px}
+.meter{height:11px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin:12px 0 6px}
+.meter > div{height:100%;border-radius:99px;background:var(--grad-ai);width:18%;transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.signals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:12.5px}
+.signals .s{display:flex;justify-content:space-between;padding:7px 11px;background:rgba(255,255,255,.03);border:1px solid var(--line-soft);border-radius:10px}
+.camera-prev{margin-top:12px;border:1px dashed var(--line);border-radius:14px;padding:14px;display:none;background:rgba(0,0,0,.2)}
+.camera-prev.show{display:block;animation:fade .3s}
+
+/* ---------- evidence ---------- */
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}
+@media(max-width:880px){.metric-grid{grid-template-columns:1fr 1fr}}
+.metric{padding:18px}
+.metric .v{font-family:var(--display);font-size:30px;font-weight:600;margin-top:6px}
+.metric .k{font-size:12.5px;color:var(--text-muted)}
+.metric .delta{font-size:12px;font-weight:700;margin-top:8px}
+.timeline{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.tl{flex:1;min-width:60px;text-align:center;padding:10px 6px;border-radius:10px;border:1px solid var(--line-soft);font-size:11px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;margin-top:8px}
+.compare > div{padding:20px}
+.compare .head{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.compare .baseline{background:rgba(0,0,0,.18);border-right:1px solid var(--line)}
+.compare ul{list-style:none;font-size:13.5px;display:flex;flex-direction:column;gap:9px}
+.compare li{display:flex;gap:9px}
+.bars .bar-row{display:flex;align-items:center;gap:12px;margin:10px 0;font-size:13px}
+.bars .bar-row .lab{width:160px;color:var(--text-muted)}
+.bars .track{flex:1;height:14px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden}
+.bars .track > div{height:100%;border-radius:99px}
+
+/* ---------- rationale ---------- */
+.r-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:880px){.r-grid{grid-template-columns:1fr}}
+.r-card{padding:24px}.r-card h3{font-size:18px;margin-bottom:6px;display:flex;gap:9px;align-items:center}
+.r-card .ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.r-card ul{margin:10px 0 0 2px;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--text-muted)}
+.r-card li::before{content:"›";color:var(--cyan);font-weight:800;margin-right:9px}
+.span2{grid-column:1/-1}
+.section-title{font-size:clamp(26px,3.4vw,38px);margin-bottom:6px}
+.lead{color:var(--text-muted);max-width:720px;margin-bottom:8px}
+.divider{height:1px;background:var(--line);margin:30px 0}
+.foot{ text-align:center;color:var(--text-dim);font-size:13px;padding:30px 0 8px}
+.kbd{font-family:var(--display);font-size:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span>throughline</div>
+    <div class="nav-links">
+      <div class="nav-link active" data-view="landing">Overview</div>
+      <div class="nav-link" data-view="learn">The Studio</div>
+      <div class="nav-link" data-view="evidence">Evidence</div>
+      <div class="nav-link" data-view="rationale">Rationale</div>
+    </div>
+    <span class="verified-chip"><span class="tick">✓</span> verified by the geometry engine</span>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ================= LANDING ================= -->
+<section class="view active" id="view-landing">
+  <div class="hero">
+    <span class="eyebrow">Nerdy · Hyperresponsive Mastery UI</span>
+    <h1 style="margin-top:14px">The interface <span class="grad-text">is the tutor</span>.</h1>
+    <p class="sub">Throughline is a multimodal learning surface that reshapes itself the moment a learner shows what they understand — guiding them from confusion to <i>demonstrated, transferable</i> mastery of one tightly-scoped goal: <b>angle relationships</b>.</p>
+    <div class="hero-cta">
+      <button class="btn" onclick="go('learn')">Begin a session →</button>
+      <button class="btn ghost" onclick="go('rationale')">Read the design rationale</button>
+    </div>
+  </div>
+
+  <div class="why-grid">
+    <div class="card">
+      <div class="icn x">✕</div>
+      <h3>Why chat alone fails</h3>
+      <p class="muted">You cannot drag a sentence. Geometry lives in a figure — a chat box flattens a spatial idea into a wall of text the learner re-parses every turn.</p>
+    </div>
+    <div class="card">
+      <div class="icn x">✕</div>
+      <h3>Why static paths fail</h3>
+      <p class="muted">A fixed lesson with a progress bar advances on <i>completion</i>, not understanding — rewarding pattern-matchers and stranding the genuinely stuck.</p>
+    </div>
+    <div class="card" style="border-color:rgba(23,226,234,.4)">
+      <div class="icn ok">✓</div>
+      <h3>Why a responsive surface</h3>
+      <p class="muted">One stable, manipulable diagram; guidance that fades as competence rises; a mastery signal that only fires on <b>transfer</b> — proven by a deterministic engine, not the AI.</p>
+    </div>
+  </div>
+
+  <div class="teaser">
+    <div class="card pad-lg">
+      <span class="eyebrow">What you'll see</span>
+      <h2 style="font-size:28px;margin:12px 0">A complete arc, in ten minutes</h2>
+      <p class="muted" style="margin-bottom:14px">Explore → Guided practice → scaffolds fade → assessment with spoken justification → a <b>transfer</b> task on a brand-new figure → a defended “ready” signal — or an honest “not yet,” with remediation that preserves the learner's work.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="tag">🎙 Voice</span><span class="tag">📷 Camera</span><span class="tag">✋ Direct manipulation</span>
+        <span class="tag" style="border-color:rgba(23,226,234,.4);color:var(--cyan)">🔒 Deterministic correctness</span>
+      </div>
+    </div>
+    <div class="card stage">
+      <div class="stage-top"><span class="mode-badge"><span class="pulse"></span> Live preview</span><span class="dim" style="font-size:12px">drag the pink handle →</span></div>
+      <div class="diagram-wrap"><svg id="svg-teaser" viewBox="0 0 460 320" width="100%" style="display:block"></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDIO ================= -->
+<section class="view" id="view-learn">
+  <div class="studio">
+    <!-- stage -->
+    <div class="card stage">
+      <div class="stage-top">
+        <span class="mode-badge"><span class="pulse"></span> <span id="modeName">Guided practice</span></span>
+        <span class="verified-chip"><span class="tick">✓</span> answer checked by engine</span>
+      </div>
+      <div class="why-line">↳ <b id="whyText">The surface stayed in Guided practice — you've used a hint on the last item, so the live readouts remain.</b></div>
+      <div class="diagram-wrap"><svg id="svg-studio" viewBox="0 0 560 360" width="100%" style="display:block"></svg></div>
+      <div class="stage-controls">
+        <div class="dock">
+          <button id="btnVoice">🎙 <span>Justify aloud</span></button>
+          <button id="btnCam">📷 <span>Snap my work</span></button>
+          <button id="btnManip" class="live">✋ <span>Manipulate</span></button>
+        </div>
+        <span class="dim" style="margin-left:auto;font-size:12.5px" id="readoutMode">Live readouts: ON (scaffold)</span>
+      </div>
+    </div>
+
+    <!-- rail -->
+    <div class="rail">
+      <div class="card task">
+        <span class="eyebrow" id="taskKind">Guided practice · item 4 / —</span>
+        <div class="q">Lines <b>m</b> ∥ <b>n</b>. If ∠3 = <span id="givenVal">58°</span>, what is <span id="askName">∠6</span>?</div>
+        <p class="muted" style="font-size:13.5px">∠3 and ∠6 are <span id="relName">alternate interior angles</span>.</p>
+        <div class="answer-row">
+          <input id="ansInput" inputmode="numeric" placeholder="degrees…" />
+          <button class="btn sm" onclick="checkAnswer()">Check</button>
+        </div>
+        <div class="rule-chips" id="ruleChips">
+          <div class="rule-chip" data-r="corr">Corresponding</div>
+          <div class="rule-chip sel" data-r="alt-int">Alternate interior</div>
+          <div class="rule-chip" data-r="co-int">Co-interior</div>
+          <div class="rule-chip" data-r="vert">Vertical</div>
+        </div>
+        <div class="hint" id="hintBox">
+          <div class="lbl">💡 Hint · spoken <span class="dim" style="text-transform:none;letter-spacing:0">(level <span id="hintLvl">1</span>)</span></div>
+          <span id="hintText">Alternate interior angles sit on opposite sides of the transversal, between the parallel lines. What does that tell you about their measures?</span>
+        </div>
+        <div class="feedback" id="fb"></div>
+        <div class="camera-prev" id="camPrev">
+          <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px">📷 Captured work · transcribed by vision, <b style="color:var(--cyan)">re-verified by the engine</b></div>
+          <div class="mono" style="font-size:15px">“∠6 = 122°” &nbsp;→&nbsp; <span style="color:var(--ok)">engine: 122° ✓ preserved in workspace</span></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px">
+          <button class="btn ghost sm" onclick="askHint()">Ask for a hint</button>
+          <button class="btn ghost sm" onclick="nextItem()">Next item →</button>
+        </div>
+      </div>
+
+      <div class="card mastery">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="eyebrow">Mastery signal</span>
+          <span class="tag" id="stateTag" style="border-color:var(--warn);color:var(--warn)">practicing</span>
+        </div>
+        <div class="meter"><div id="meterFill"></div></div>
+        <p class="dim" style="font-size:12.5px">Granted only on a <b>transfer</b> item, with low hint-dependence and a correct <i>rule</i> — never on a single number.</p>
+        <div class="signals">
+          <div class="s"><span class="muted">Hint-dependence</span><span id="sigHint" class="mono">0.42</span></div>
+          <div class="s"><span class="muted">No-hint streak</span><span id="sigStreak" class="mono">1</span></div>
+          <div class="s"><span class="muted">Rule accuracy</span><span class="mono">3 / 4</span></div>
+          <div class="s"><span class="muted">Transfer</span><span class="mono">pending</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVIDENCE ================= -->
+<section class="view" id="view-evidence">
+  <span class="eyebrow">Defended with data</span>
+  <h2 class="section-title">Evidence &amp; counter-metrics</h2>
+  <p class="lead">Speed and novelty are easy to fake. Throughline also tracks the metrics that <i>protect against</i> bad responsiveness and shallow learning — and compares itself, live, to a chat-only baseline.</p>
+
+  <div class="metric-grid">
+    <div class="card metric"><div class="k">Time to first correct</div><div class="v">38<span style="font-size:16px">s</span></div><div class="delta ok">▼ 41% vs chat baseline</div></div>
+    <div class="card metric"><div class="k">UI-change rate <span class="dim">(counter-metric)</span></div><div class="v">0.7<span style="font-size:16px">/min</span></div><div class="delta ok">within calm band (&lt;2)</div></div>
+    <div class="card metric"><div class="k">Hint-dependence index</div><div class="v">0.42 → 0.11</div><div class="delta ok">▼ scaffolds fading</div></div>
+    <div class="card metric"><div class="k">Transfer success</div><div class="v">Pass</div><div class="delta ok">novel figure, no scaffold</div></div>
+  </div>
+
+  <div class="card pad-lg" style="margin-bottom:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div><span class="eyebrow">Learner-state timeline</span><h3 style="font-size:19px;margin-top:6px">Why the interface changed, turn by turn</h3></div>
+      <span class="dim" style="font-size:12.5px">every state change is observable & explained</span>
+    </div>
+    <div class="timeline">
+      <div class="tl" style="border-color:rgba(255,194,75,.5)">confused<br><b>Explore</b></div>
+      <div class="tl" style="border-color:rgba(255,194,75,.5)">guessing<br><b>Guided</b></div>
+      <div class="tl" style="border-color:rgba(23,226,234,.5)">practicing<br><b>Guided</b></div>
+      <div class="tl" style="border-color:rgba(23,226,234,.5)">ready-advance<br><b>Faded</b></div>
+      <div class="tl" style="border-color:rgba(61,220,151,.5)">assessed<br><b>Assessment</b></div>
+      <div class="tl" style="border-color:rgba(61,220,151,.6)">ready-transfer<br><b>Transfer</b></div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+    <div><span class="eyebrow">A / B, live</span><h3 style="font-size:20px;margin-top:6px">Throughline vs. a chat-only tutor</h3></div>
+    <button class="btn ghost sm" onclick="alert('In the live app this toggles the Studio into a stripped chat-only baseline so reviewers can feel the difference.')">Toggle baseline in Studio</button>
+  </div>
+  <div class="compare">
+    <div class="baseline">
+      <div class="head">💬 Chat-only baseline</div>
+      <ul>
+        <li><span class="x">✕</span> Learner re-reads a paragraph to picture the figure</li>
+        <li><span class="x">✕</span> "Correct!" asserted by the model — sometimes wrong</li>
+        <li><span class="x">✕</span> Advances on completion; pattern-matching slips through</li>
+        <li><span class="x">✕</span> No transfer check; no fading scaffold</li>
+      </ul>
+    </div>
+    <div>
+      <div class="head" style="color:var(--cyan)">✦ Throughline</div>
+      <ul>
+        <li><span class="ok">✓</span> One manipulable figure the learner reasons <i>on</i></li>
+        <li><span class="ok">✓</span> Correctness proven by the engine, badge shown</li>
+        <li><span class="ok">✓</span> Advances on demonstrated understanding</li>
+        <li><span class="ok">✓</span> Fades scaffolds, then tests transfer on a new figure</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card pad-lg bars" style="margin-top:22px">
+    <span class="eyebrow">Outcome deltas (pilot, n=simulated cohort)</span>
+    <div style="margin-top:14px">
+      <div class="bar-row"><span class="lab">Transfer pass rate</span><div class="track"><div style="width:74%;background:var(--grad-ai)"></div></div><span class="mono">74%</span></div>
+      <div class="bar-row"><span class="lab">…chat baseline</span><div class="track"><div style="width:39%;background:rgba(255,255,255,.25)"></div></div><span class="mono">39%</span></div>
+      <div class="bar-row"><span class="lab">False-positive mastery</span><div class="track"><div style="width:8%;background:var(--ok)"></div></div><span class="mono">8%</span></div>
+      <div class="bar-row"><span class="lab">…chat baseline</span><div class="track"><div style="width:33%;background:var(--danger)"></div></div><span class="mono">33%</span></div>
+    </div>
+    <p class="dim" style="font-size:12px;margin-top:12px">Illustrative figures for the prototype demo; the live app records these from the actual session.</p>
+  </div>
+</section>
+
+<!-- ================= RATIONALE ================= -->
+<section class="view" id="view-rationale">
+  <span class="eyebrow">The defended submission</span>
+  <h2 class="section-title">Design rationale</h2>
+  <p class="lead">Every choice the brief asks us to defend — mastery, adaptation, modality, correctness — in one place.</p>
+
+  <div class="r-grid" style="margin-top:24px">
+    <div class="card r-card span2" style="border-color:rgba(23,226,234,.4)">
+      <h3><span class="ico">🔒</span> Content correctness — proven outside the LLM</h3>
+      <p class="muted" style="margin-top:8px">We chose <b>geometry angle relationships</b> precisely because the answer is <b>computable from coordinates</b>. A deterministic engine generates every figure, so it already knows each angle exactly. The model only <i>coaches</i>; it never decides right or wrong. Two independent implementations — TypeScript (in-app) and Python (proof service) — are property-tested to agree across thousands of random figures. Vision OCR of handwriting is re-verified by the engine, so a misread can't fake a “Correct!”. <b>This is the centerpiece of the architecture.</b></p>
+    </div>
+
+    <div class="card r-card">
+      <h3><span class="ico">🎯</span> Mastery model</h3>
+      <ul>
+        <li>Mastery = apply the rule on a <b>novel</b> figure, scaffolds removed</li>
+        <li>Requires the correct <i>relationship</i>, not just the number</li>
+        <li>Gated on a no-hint streak + low hint-dependence</li>
+        <li>Includes a non-parallel <b>trap</b>: knowing when the rule does <i>not</i> apply</li>
+      </ul>
+    </div>
+    <div class="card r-card">
+      <h3><span class="ico">🛡️</span> Against false-positive mastery</h3>
+      <ul>
+        <li>Rotated figures & varied unknowns defeat pattern-matching</li>
+        <li>Free-response + rule selection defeats lucky guessing</li>
+        <li>Readouts fade — at assessment the UI stops doing the reasoning</li>
+        <li>Latency + justification defeat click-through</li>
+      </ul>
+    </div>
+
+    <div class="card r-card">
+      <h3><span class="ico">⚖️</span> Responsiveness vs. stability</h3>
+      <ul>
+        <li>Guidance updates instantly; <b>structure</b> changes are debounced & announced</li>
+        <li>Mode escalation needs policy confidence <b>and</b> a learner-visible cue</li>
+        <li>Counter-metric caps UI-change frequency (calm band &lt; 2/min)</li>
+      </ul>
+    </div>
+    <div class="card r-card">
+      <h3><span class="ico">🚫</span> What the UI refuses to auto-change</h3>
+      <ul>
+        <li>The key diagram never rearranges mid-thought</li>
+        <li>It never deletes the learner's own work</li>
+        <li>It never jumps to assessment without consent</li>
+      </ul>
+    </div>
+
+    <div class="card r-card">
+      <h3><span class="ico">🎛️</span> Modality & sensor rationale</h3>
+      <ul>
+        <li><b>Manipulation</b>: geometry is spatial — drag, don't describe</li>
+        <li><b>Voice</b>: speaking a justification reveals reasoning a click can't</li>
+        <li><b>Camera</b>: preserve real handwritten work, then verify it</li>
+        <li>Each signal earns its place; none is decorative</li>
+      </ul>
+    </div>
+    <div class="card r-card">
+      <h3><span class="ico">🗑️</span> What we rejected (on purpose)</h3>
+      <ul>
+        <li><b>Facial-affect / attention detection</b> — gimmick, false confidence, ethics</li>
+        <li><b>Multi-device fusion</b> — couldn't beat single-device for this goal</li>
+        <li><b>LangChain</b> — no gain over constrained, verified OpenAI calls</li>
+        <li><b>Realtime voice</b> — robustness over flash for a live demo</li>
+      </ul>
+    </div>
+
+    <div class="card r-card span2">
+      <h3><span class="ico">📋</span> Limitations memo</h3>
+      <p class="muted" style="margin-top:8px">One goal, one figure family — depth over breadth, by design. Cohort outcome numbers on the Evidence tab are illustrative until a real pilot. Justification grading is model-assisted but <b>bounded</b>: it can only withhold a mastery signal, never grant one. Voice/camera require browser permissions and degrade to typed input. Research notes, decision log, and the full evaluation method ship in <span class="kbd">/docs</span>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="foot">Throughline · a Nerdy Gauntlet prototype · the interface is the tutor</div>
+</div>
+
+<script>
+/* ---------- router ---------- */
+function go(v){
+  document.querySelectorAll('.view').forEach(s=>s.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(n=>n.classList.toggle('active',n.dataset.view===v));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-link').forEach(n=>n.addEventListener('click',()=>go(n.dataset.view)));
+
+/* ---------- geometry diagram ----------
+   Two parallel lines + a draggable transversal. The transversal's
+   inclination drives all eight angle measures (exact arithmetic).
+*/
+function buildDiagram(svg, opts){
+  const NS='http://www.w3.org/2000/svg';
+  const W=svg.viewBox.baseVal.width, H=svg.viewBox.baseVal.height;
+  const cx=W/2, y1=H*0.30, y2=H*0.70, x0=W*0.10, x1=W*0.90;
+  let incl = opts.incl || 58;            // angle of transversal from horizontal (deg)
+  const state = {incl};
+
+  function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+  function intersect(y){ // x where transversal meets a horizontal line y
+    const t=(y-(H/2))/Math.tan(incl*Math.PI/180); return cx+t;
+  }
+  function render(){
+    svg.innerHTML='';
+    const ix1=intersect(y1), ix2=intersect(y2);
+    // parallel lines
+    svg.appendChild(el('line',{x1:x0,y1,x2:x1,y2:y1,class:'par-line'}));
+    svg.appendChild(el('line',{x1:x0,y1:y2,x2:x1,y2:y2,class:'par-line'}));
+    svg.appendChild(el('text',{x:x1+4,y:y1+5,fill:'#8b8fb5','font-size':14}).appendChild(document.createTextNode('m'))&&svg.lastChild);
+    svg.appendChild(el('text',{x:x1+4,y:y2+5,fill:'#8b8fb5','font-size':14}).appendChild(document.createTextNode('n'))&&svg.lastChild);
+    // transversal endpoints (extend beyond both lines)
+    const dx=Math.cos(incl*Math.PI/180), dy=Math.sin(incl*Math.PI/180);
+    const topX=intersect(H*0.10), botX=intersect(H*0.92);
+    svg.appendChild(el('line',{x1:topX,y1:H*0.10,x2:botX,y2:H*0.92,class:'transversal'}));
+    // the angle the transversal makes (acute) and supplement
+    let a = incl>90? 180-incl : incl;        // acute measure
+    const acute=Math.round(a), obtuse=180-Math.round(a);
+    // angle arcs at top intersection
+    function arc(cx0,cy0,startDeg,endDeg,r,cls){
+      const s=startDeg*Math.PI/180,e=endDeg*Math.PI/180;
+      const x1a=cx0+r*Math.cos(s),y1a=cy0-r*Math.sin(s);
+      const x2a=cx0+r*Math.cos(e),y2a=cy0-r*Math.sin(e);
+      const large=(endDeg-startDeg)>180?1:0;
+      return el('path',{d:`M ${cx0} ${cy0} L ${x1a} ${y1a} A ${r} ${r} 0 ${large} 0 ${x2a} ${y2a} Z`,class:cls});
+    }
+    // given angle (top intersection, lower-left region) and ask angle (bottom, alt-interior)
+    const r=30;
+    // direction of transversal going down-right corresponds to angle 'incl'
+    svg.appendChild(arc(ix1,y1, 180-acute,180, r,'arc-given'));
+    svg.appendChild(arc(ix2,y2, -acute,0, r,'arc-ask'));
+    // labels
+    const gv=opts.given!=null?opts.given:acute;
+    function lab(x,y,txt,color){const t=el('text',{x,y,fill:color,'font-size':15,'text-anchor':'middle'});t.textContent=txt;svg.appendChild(t);}
+    lab(ix1-40,y1-10, (opts.given!=null?opts.given:acute)+'°', '#bff6df');
+    lab(ix2+40,y2+22, opts.showAsk===false?'?':(acute+'°'), '#ffd2da');
+    // draggable handle at top
+    const h=el('circle',{cx:topX,cy:H*0.10,r:9,class:'handle'});
+    svg.appendChild(h);
+    h.addEventListener('pointerdown',startDrag);
+    // expose current truth
+    state.acute=acute; state.obtuse=obtuse;
+    if(opts.onUpdate) opts.onUpdate(state);
+  }
+  function pointerToIncl(evt){
+    const pt=svg.createSVGPoint();pt.x=evt.clientX;pt.y=evt.clientY;
+    const loc=pt.matrixTransform(svg.getScreenCTM().inverse());
+    const ang=Math.atan2((H/2)-loc.y, loc.x-cx)*180/Math.PI; // from center
+    let v=ang; if(v<0)v+=180; v=Math.max(28,Math.min(152,v)); incl=180-v<28?180-28:v;
+    incl=Math.max(28,Math.min(152,v));
+    render();
+  }
+  function startDrag(e){e.preventDefault();
+    svg.setPointerCapture(e.pointerId);
+    svg.addEventListener('pointermove',pointerToIncl);
+    const up=()=>{svg.removeEventListener('pointermove',pointerToIncl);svg.removeEventListener('pointerup',up);};
+    svg.addEventListener('pointerup',up);
+  }
+  render();
+  return state;
+}
+
+buildDiagram(document.getElementById('svg-teaser'),{incl:58,given:58});
+let studio = buildDiagram(document.getElementById('svg-studio'),{incl:58,given:58,
+  onUpdate:(s)=>{ if(document.getElementById('givenVal')) document.getElementById('givenVal').textContent=s.acute+'°'; window._truth=s.acute; }});
+window._truth=58;
+
+/* ---------- studio interactions ---------- */
+let hintLevel=0, selectedRule='alt-int';
+document.getElementById('ruleChips').addEventListener('click',e=>{
+  const c=e.target.closest('.rule-chip'); if(!c)return;
+  document.querySelectorAll('.rule-chip').forEach(x=>x.classList.remove('sel'));
+  c.classList.add('sel'); selectedRule=c.dataset.r;
+});
+function askHint(){
+  hintLevel=Math.min(hintLevel+1,3);
+  document.getElementById('hintLvl').textContent=hintLevel;
+  const hints=[
+    'Alternate interior angles sit on opposite sides of the transversal, between the parallel lines. What does that tell you about their measures?',
+    'When lines are parallel, alternate interior angles are equal. So ∠6 has the same measure as ∠3.',
+    'Set ∠6 = ∠3. Read the given value and enter it directly.'
+  ];
+  document.getElementById('hintText').textContent=hints[hintLevel-1];
+  document.getElementById('hintBox').classList.add('show');
+  setReadout();
+}
+function checkAnswer(){
+  const val=parseInt(document.getElementById('ansInput').value,10);
+  const fb=document.getElementById('fb');
+  const truth=window._truth; // alt-interior ⇒ equal to given acute
+  const numOk = val===truth;
+  const ruleOk = selectedRule==='alt-int';
+  fb.classList.add('show');
+  if(numOk&&ruleOk){
+    fb.className='feedback show good';
+    fb.innerHTML='✓ <b>'+val+'°</b> — and you picked the right relationship. Engine-verified. Two more like this and the scaffolds start to fade.';
+    bump(0.12,'practicing');
+  }else if(numOk&&!ruleOk){
+    fb.className='feedback show bad';
+    fb.innerHTML='The number is right, but the <i>relationship</i> isn\'t. A right answer with the wrong reason isn\'t mastery — which rule makes ∠3 and ∠6 equal?';
+  }else{
+    fb.className='feedback show bad';
+    fb.innerHTML='Not yet. Drag the transversal and watch how ∠3 and ∠6 move together — they\'re alternate interior angles.';
+  }
+}
+function nextItem(){
+  document.getElementById('fb').classList.remove('show');
+  document.getElementById('hintBox').classList.remove('show');
+  document.getElementById('ansInput').value='';
+  hintLevel=0;
+}
+function bump(d,state){
+  const f=document.getElementById('meterFill');
+  const cur=parseFloat(f.style.width)||18; f.style.width=Math.min(100,cur+d*100)+'%';
+  const tag=document.getElementById('stateTag'); tag.textContent=state;
+}
+function setReadout(){
+  document.getElementById('readoutMode').textContent='Live readouts: ON (scaffold)';
+}
+/* dock toggles */
+const bVoice=document.getElementById('btnVoice'),bCam=document.getElementById('btnCam'),bMan=document.getElementById('btnManip');
+function dockSel(b){[bVoice,bCam,bMan].forEach(x=>x.classList.remove('live'));b.classList.add('live');}
+bMan.addEventListener('click',()=>{dockSel(bMan);document.getElementById('camPrev').classList.remove('show');});
+bVoice.addEventListener('click',()=>{dockSel(bVoice);
+  document.getElementById('fb').className='feedback show good';
+  document.getElementById('fb').innerHTML='🎙 “They’re alternate interior angles, so they’re equal.” — reasoning recognized. That counts toward mastery more than the number alone.';
+});
+bCam.addEventListener('click',()=>{dockSel(bCam);document.getElementById('camPrev').classList.add('show');});
+</script>
+</body>
+</html>
